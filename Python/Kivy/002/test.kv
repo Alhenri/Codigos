@@ -1,0 +1,17 @@
+<incrementador>:
+    orientation: 'vertical'
+    Button:
+        text:'Incrementar'
+        font_size:30
+        on_release: labelID.text = str(int(labelID.text)+1)
+    Button:
+        text:'Decrementar'
+        font_size: 30
+        on_release: labelID.text = str(int(labelID.text)-1)
+    Label:
+        id: labelID
+        text: '1'
+        font_size: 30
+    CheckBox:
+        text: 'Teste'
+        font_size: 30

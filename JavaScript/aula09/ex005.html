@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body{
+            background-color:cornflowerblue;
+            color: darkgreen;
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>iniciando estudos com o DOM</h1>
+    <p>Aqui vai o resultado </p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        //Pesquisar "Arvore DOM"
+        /*A arvore DOM é a forma hierarquica do dos sites, por ela podemos navegar
+         de 5 formas diferentes, por marca, por id, por nome, por classe e por seletor
+        */
+        //Selecionando o body
+        var corpo = window.document.body
+        //selecionando o primeiro[0] parágrafo da tag p<p>
+        var p1 = window.document.getElementsByTagName('p')[0];
+        //Selecionando por id (div)
+        var d = document.getElementById('msg');
+        //Selecionando por queryselector
+        var e = window.document.querySelector('div#msg')//id usa # e classe usa .
+        //Escrevendo na tela
+        window.document.write('Está escrito assim: '+p1.innerText);
+        //mudando a cor do paragrafo
+        p1.style.color = 'blue'
+        //mudando cor do background
+        corpo.style.background = 'pink'
+        d.style.background = 'white'
+        //d.innerText = 'Modifiquei...'
+    </script>
+</body>
+</html>

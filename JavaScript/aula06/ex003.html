@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!--html coment-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: rgb(220, 220, 230);
+            color: coral; /*CSS coment*/
+            font: normal 20pt Arial;
+        }
+        h1 {
+           color: rgb(184, 36, 152); 
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+       var n1 = Number.parseFloat(window.prompt('Digite um numero'));//naturalmente retorna string
+       var n2 = Number.parseInt(window.prompt('Digite outro numero'));//mas converto os valores pra number
+       //Number(n), ele decide oq fazer
+       //n1.toFixed(2): fixa em duas casas decimais
+       //n1.toFixed(2).replace('.',','): troca ponto por virgula
+       //n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}): coloca o valor em reais
+       //String(n) e n.toString(), converte para string
+       //s.length: tamanho da string
+       //s.toUpperCase(): tudo maiuscula
+       //s.toLowerCase(): tudo minuscula
+       var s = n1+n2
+       //(number + number) soma
+       //(string + string) concatenação
+       window.alert('A soma dos valores é: '+ s);
+       // `A soma dos valores é ${s}` template string
+    </script>   
+</body>
+</html>

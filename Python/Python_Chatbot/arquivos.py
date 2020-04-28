@@ -1,0 +1,5 @@
+arquivo = open('teste.json', 'w')
+arquivo.write('Texto dentro do arquivo')
+arquivo.close()
+arquivo = open('teste.json', 'r')
+print(arquivo.read())

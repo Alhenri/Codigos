@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div#area {
+            background-color: rgb(10, 109, 2);
+            font: normal 20pt Arial;
+            color: rgb(255, 255, 255);
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+<div id="area"><!--codigo original: onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"--> <!--quando clicar
+        na div, será executado o metodo "clicar"-->
+        Interaja... 
+    </div>
+    <script>
+        var a = document.getElementById('area');
+        a.addEventListener('click', clicar);//trecho de codigo em JS
+        a.addEventListener('mouseenter', entrar);//para substituir o techo
+        a.addEventListener('mouseout', sair);//no id --> "codigo original"
+
+        function clicar(){//função clicar 
+            a.innerText = 'Clicou!';
+            a.style.background = 'red'
+         }
+        function entrar(){
+            a.innerText = 'Entrou';
+        }
+        function sair(){
+            a.innerText = 'Saiu';
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
