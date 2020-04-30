@@ -1,0 +1,20 @@
+section#Titulo{
+    text-align: center;
+    background: rgb(116, 105, 105);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.671);
+}
+section#Info{
+    text-shadow: black;
+    padding: 10px;
+}
+input#Ent_nome{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+body{
+    background-image: url(Desert.jpg);
+}
