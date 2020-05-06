@@ -1,4 +1,4 @@
-import cv2
+from cv2 import cv2
 import numpy as np  # biblioteca responsavel por trabalhar com matrizes e arrays multidimensionais
 from matplotlib import pyplot as plt  # Vamos usar pra plotar as imagens em formato de matriz do numpy
 

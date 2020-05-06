@@ -1,2 +1,4 @@
 pyuic5 -x nome.ui -o nome.py (transforma interface em codigo)
 pyinstaller -w nome_do_software (gera executavel python)
+
+"python.linting.pylintArgs": ["--generate-members"]
