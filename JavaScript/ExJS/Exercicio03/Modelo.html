@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo de exercício</title>
+    <link rel="stylesheet" href="estilo.css"><!--Pega um estilo css 
+    externo-->
+    
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                Inicio:
+                <input type="number" id="txtini" class="ctxt">
+            </p>
+            <p>
+                Fim:
+                <input type="number" id="txtfim" class="ctxt">
+            </p>
+            <p>
+                Passo:
+                <input type="number" id="txtpas" class="ctxt">
+            </p>
+            <p>
+                <input type="button" value="Enviar" id="benviar" onclick="contar()">
+            </p>
+        </div>
+        <div id="res">
+            Preparando a contagem...
+        </div>
+    </section>
+    <footer>
+        <p>&copy;Alhenri</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
