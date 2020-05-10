@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste timeout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cronometro</h1>
+    <section id="config">
+        <h2>Configuração</h2>
+        <p>
+            Hora:
+            <input type="number" class="txt" id="txthor" min="0">
+            Minuto:
+            <input type="number" class="txt" id="txtmin" max="60" min="0">
+            Segundo:
+            <input type="number" class="txt" id="txtsec" max="60" min="0">
+        </p>
+        <p>
+            <input type="button" value="Iniciar" class="but" onclick="config()">
+        </p>
+    </section>
+    <section id="cont">
+        <h2>Contagem</h2>
+        <div>
+            <label id="cont">Inicie a contagem após a configuração</label>
+            <p>
+                <input type="button" class="but" value="Parar" onclick="parar()">
+                <input type="button" class="but" value="Resetar" onclick="reset()">
+            </p>
+        </div>
+    </section>
+    <script src="script.js"></script>    
+</body>
+</html>
