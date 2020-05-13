@@ -1,0 +1,2 @@
+Esse texto sera encriptado com uma chave de fluxo simetrica, que aplica a encriptacao em cada 
+letra, para voltar ao texto padrao e necessario rodar novamente o programa com a mesma chave
