@@ -1,10 +1,7 @@
 import pandas as pd
 bancoDeDados = r'.\Projetos\horaExtra\arquivos\funcionarios.csv'
 modelo = r'.\Projetos\horaExtra\arquivos\modelo.pdf'
-def geraRecibo():
-    arquivo = open(modelo, 'r')
-    teste = arquivo.read()
-    
+
 def attHora(cpf, hora):
     dados = pd.read_csv(bancoDeDados, delimiter=';')
     posi = -1

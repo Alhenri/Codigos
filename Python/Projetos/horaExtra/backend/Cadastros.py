@@ -15,13 +15,13 @@ def cadFunc(info):
             arquivo.write(f'{i};')
     arquivo.close()
 
-def dadosFunc(cpf):
+def dadosFunc(nome):
     '''
     Função responsável por encontrar o funcionario e retornar os dados dele
     '''
     arquivo = pd.read_csv(localFunc, delimiter=';')
     dado = arquivo.to_dict()
-    for pos, func in dado['CPF'].items():
-        if func == cpf:
+    for pos, func in dado['Nome'].items():
+        if func == nome:
             return dado['Nome'][pos], str(dado['CPF'][pos]), dado['Cargo'][pos], dado['Salario'][pos], dado['Horas'][pos]
     return -1
