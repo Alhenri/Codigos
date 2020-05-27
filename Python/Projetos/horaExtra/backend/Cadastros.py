@@ -1,6 +1,6 @@
 import pandas as pd
 
-localFunc = r'.\Projetos\horaExtra\arquivos\funcionarios.csv'
+localFunc = r'.\arquivos\funcionarios.csv'
 
 def cadFunc(info):
     '''
