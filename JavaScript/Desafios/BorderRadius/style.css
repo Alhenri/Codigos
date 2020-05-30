@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}
+section#f{
+    margin: auto;
+    background-color: rgb(60, 236, 119);
+    border-radius: 10px;
+    width: 300px;
+    padding: 50px;
+    
+}
+textarea{
+    text-align: left;
+}

@@ -1,16 +1,24 @@
 from frontend.Interface import QtWidgets, Ui_timeSet
 from frontend.mensagem import Ui_mensagem
+from frontend.addFunc import Ui_Form_addFuc
 from backend import Cadastros, Doc
 
 #=-=-=-=-=-Estâncias e configurações=-=-=-=-=-=-=
 import sys
 app = QtWidgets.QApplication(sys.argv)
+
 mainForm = QtWidgets.QWidget()
 msgForm = QtWidgets.QWidget()
+addForm = QtWidgets.QWidget()
+
 uiMSG = Ui_mensagem()
 uiMain = Ui_timeSet()
+uiAdd = Ui_Form_addFuc()
+
+uiAdd.setupUi(addForm)
 uiMSG.setupUi(msgForm)
 uiMain.setupUi(mainForm)
+
 mainForm.show()
 #=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -48,9 +56,29 @@ def Valorhr(salario, tempo):
     return (salario/180)*1.5*tempo
 
 def ui_cadFunc():
-    pass
+    addForm.show()
+    mainForm.close()
     
+def ui_main():
+    mainForm.show()
+    addForm.close()
+
+def addFunc():
+    info = list()
+    info.append(uiAdd.lineEdit_Nome.text())
+    info.append(uiAdd.lineEdit_cpf.text())
+    info.append(uiAdd.lineEdit_cargo.text())
+    info.append(uiAdd.lineEdit_salario.text())
+    info.append('0')
+
+    Cadastros.cadFunc(info)
+
+#=-=-=-=-=-=-=-=-=-=-=Configuração dos botões-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 uiMain.pushButton_novoFunc.clicked.connect(ui_cadFunc)
 uiMain.pushButton_Buscar.clicked.connect(buscar)
 uiMain.pushButton_InsereHE.clicked.connect(inserirHora)
+
+uiAdd.pushButton_addFuc.clicked.connect(addFunc)
+uiAdd.pushButton_voltar.clicked.connect(ui_main)
+
 app.exec_()

@@ -260,13 +260,3 @@ class Ui_timeSet(object):
         self.pushButton_Buscar.setText(_translate("timeSet", "Buscar por nome"))
         self.pushButton_novoFunc.setText(_translate("timeSet", "Cadastrar novo funcionário"))
         self.label_7.setText(_translate("timeSet", "Inserção de horas extra"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    timeSet = QtWidgets.QWidget()
-    ui = Ui_timeSet()
-    ui.setupUi(timeSet)
-    timeSet.show()
-    sys.exit(app.exec_())
