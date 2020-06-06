@@ -21,6 +21,15 @@
     #page-home main a{
         margin-top: 15px;
     }
+
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+
+    #page-search-results .cards img{
+        height: 200px;
+    }
+
 }
 @media(max-width: 580px){
     #page-home main h1{

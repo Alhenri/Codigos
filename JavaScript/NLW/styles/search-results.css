@@ -1,0 +1,111 @@
+#page-search-results {
+    /*
+    Alinhamento de caixa pelo lado de fora:
+    A margem de 90% significa que não poderá utilizar a tela todas de uma vez.
+    Daremos tambem um maximo de comprimento para a tela parar de expadir.
+    */
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-search-results header {
+    /*
+    Aqui eu defini as caracterisicas exclusivas da barra superior
+    */
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-search-results header a{
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    
+}
+
+#page-search-results header a span{
+    /*
+    Passa a imagem para dentro do span
+    */
+    background-image: url('../icones/arrow-left.svg');
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+main{
+    margin: 48px;
+}
+
+main h3{
+    /* Gambiarra em font-size */
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto, sans-serif;
+
+    margin-bottom: 32px;
+}
+
+main .cards {
+    /* gap é uma propriedade do grid que matem um afastamento
+    entre os elementos */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 24px;
+}
+
+main .card img{
+    width: 100%;
+    height: 150px;
+
+    /* preenchimento com imagem */
+    object-fit: cover;
+
+    border-radius: 8px 8px 0 0;
+
+}
+
+main .card h1{
+    margin-top: 32px;
+    font-size: 36px;
+    line-height: 41px;
+
+    color: #322153;
+}
+
+main .card h3{
+    margin: 24px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+
+    color: #34cb79;
+}
+body::after{
+    /* ::after é um pseudo elemento que vem após o original */
+    
+    /* coloca algo detro para aparecer
+    posiciona fixamente
+    */
+    content: "";
+    position: fixed;
+    
+    /* Define as dimensões e a cor de fundo*/
+    top: 260px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+
+    /* Coloca o elemento atras de tudo */
+    z-index: -1;
+}
