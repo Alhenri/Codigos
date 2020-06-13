@@ -11,7 +11,6 @@ nunjucks.configure("src/views", {//onde ta os html, objeto
     noCache: true
 })
 
-
 //configurar caminhos da minha aplicação
     //pagina inicial
         //req: requisição
@@ -19,7 +18,7 @@ nunjucks.configure("src/views", {//onde ta os html, objeto
 server.get("/", (req, res) => { //get é um verbo de requisição http, e o '/' é a primeira chamada
     //res.sendFile(__dirname + "/views/index.html") //dirname é o diretório em que eu estou
     return res.render("index.html", {
-        title: "Teste"
+        title: "Ecoleta" //envia a variável
     })
 })
 
@@ -30,5 +29,6 @@ server.get("/create", (req, res) => {//o arquivo deverá ser chamado exatamente 
 server.get("/search", (req, res) => {
     return res.render("search-results.html")
 })
+
 // ligar o servidor
 server.listen(3000)
