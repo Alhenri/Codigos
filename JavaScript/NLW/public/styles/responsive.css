@@ -48,7 +48,7 @@
     }
 
     #page-create-point .items-grid{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     #page-create-point form button{
         width: 100%;
@@ -75,5 +75,11 @@
     #page-home{
         background-position-y: 200px;
 
+    }
+}
+
+@media (max-width: 360px){
+    #page-create-point .items-grid{
+        grid-template-columns: 1fr;
     }
 }
