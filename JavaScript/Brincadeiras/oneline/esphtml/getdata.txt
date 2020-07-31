@@ -1,0 +1,10 @@
+{
+    "atuadores":{
+        "motor01":"on",
+        "alarme01":"off"
+    },
+    "sensores":{
+        "umidade":65,
+        "temperatura":21
+    }
+}

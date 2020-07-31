@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head onload="lerdados()">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDET</title>
+    <style>
+        body{
+            align-items: center;
+            background-color: black;
+        }
+        div.page-home{
+            text-align: center;
+            margin: 0 15%;
+            background-color: rgb(247, 250, 229);
+            padding: 25px;
+        }
+        section{
+            text-align: left;
+            margin: 10%;
+            padding: 5px 25px;
+            border-radius: 5px;
+            background-color: rgb(154, 248, 145);
+        }
+    </style>
+</head>
+<body onload="lerdados()">
+    <div class="page-home">
+        <h1>Controlador do esp</h1> 
+        <section id="sensores">
+            <h3>Sensores</h3>
+        </section>
+        <section id="atuadores">
+            <h3>Atuadores</h3>
+        </section>
+    </div>
+
+    <script>
+        function lerdados(){
+            const request = new XMLHttpRequest();
+            const sensores = document.querySelector("section#sensores")
+            const atuadores = document.querySelector("section#atuadores")
+            const senID = ["umidade", "temperatura"]
+            const atuID = ["motor01", "alarme01"]
+
+            request.onreadystatechange = function() { 
+
+                if(this.readyState == 4 && this.status == 200){
+                    let resp = this.responseText;
+                    let obresp = JSON.parse(resp);
+
+                    for(var c=0; c<senID.length; c++){
+                        try {
+                            var elem = document.querySelector(`p#${senID[c]}`);
+                            elem.innerText = `Sensor de ${senID[c]}: ${obresp.sensores[senID[c]]}`;
+                        }
+                        catch (error) {
+                            var elem = document.createElement("p");
+                            elem.innerText = `Sensor de ${senID[c]}: ${obresp.sensores[senID[c]]}`;
+                            elem.setAttribute("id", senID[c]);
+                            sensores.appendChild(elem);
+                        }
+                    }
+
+                    for(var c=0; c<atuID.length; c++){
+                        try {
+                            var elem = document.querySelector(`p#${atuID[c]}`);
+                            elem.innerText = `Estado do ${atuID[c]}: ${obresp.atuadores[atuID[c]]}`;
+                        }
+                        catch (error) {
+                            var elem = document.createElement("p");
+                            elem.innerText = `Estado do ${atuID[c]}: ${obresp.atuadores[atuID[c]]}`;
+                            elem.setAttribute("id", atuID[c]);
+                            atuadores.appendChild(elem);
+                        }
+                    }
+                }
+            }
+            request.open("GET", "getData.txt", true);
+            request.send(null);
+            setTimeout('lerdados()', 5000);
+        }
+    </script>
+</body>
+</html>

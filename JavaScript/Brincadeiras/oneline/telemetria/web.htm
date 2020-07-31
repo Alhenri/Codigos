@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetria K.D.E.T</title>
+    <style>
+        body{
+            align-items: center;
+            background-color: rgb(126, 138, 162);
+        }
+        div.page-home{
+            border-radius: 15px;
+            text-align: center;
+            align-items: center;
+            margin: 0 15%;
+            background-color: rgb(255, 152, 0);
+            padding: 5%;
+        }
+        section{
+            margin: 15px;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+        input{
+            background-color: rgb(38, 50, 72);
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            width: 130px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body onload="lerDados()">
+    <div class="page-home">
+        <section>
+            <h1>Leitura da informação</h1>
+            <p id="reserv">Status do reservatório: 0%</p>
+            <p id="tanque">Status do tanque: 0%</p>
+        </section>
+        <section>
+            <h1>Controle da bomba</h1>
+            <form action="">
+                <input type="submit" value="Ligar" name="on">
+                <input type="submit" value="Desligar" name="off">
+            </form>
+        </section>
+    </div>
+    <script>
+        function lerDados(){
+            const request = new XMLHttpRequest();
+
+            request.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200){
+                    let resp = JSON.parse(this.responseText);
+                    const reserv = document.querySelector("p#reserv");
+                    const tanque = document.querySelector("p#tanque");
+
+                    reserv.innerText = `Status do reservatório: ${resp.reserv}` ;
+                    tanque.innerText = `Status do tanque: ${resp.tanque}`;
+                }
+
+            };
+
+            request.open("GET", "dados", true);
+            request.send(null);
+            setTimeout("lerDados()", 500);
+        }
+    </script>
+</body>
+</html>
