@@ -12,10 +12,10 @@ os.makedirs('teste/olá') # cria um caminho
 os.removedirs('teste/olá') # remove todo o caminho
 
 
-mod_time = os.stat('texto.txt').st_mtime # Mostra o timestamp da data de modificação
-mod_time = datetime.fromtimestamp(mod_time)
+# mod_time = os.stat('texto.txt').st_mtime # Mostra o timestamp da data de modificação
+# mod_time = datetime.fromtimestamp(mod_time)
 
-print ( f"Data de modificação do arquivo: {mod_time}")
+# print ( f"Data de modificação do arquivo: {mod_time}")
 
 print(os.listdir())
 print('=-'*20)

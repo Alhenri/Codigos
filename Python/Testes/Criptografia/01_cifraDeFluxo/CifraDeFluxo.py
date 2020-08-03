@@ -1,3 +1,8 @@
+# Cifras de fluxo são cifras aplicadas bit a bit
+# Nesse exemplo estamos usando um cifra de fluxo
+# com chave simétrica, ou seja, ela tanto criptografa quanto descriptografa
+import os
+path = os.getcwd()+'/texto.txt'
 arquivo = open('Testes/texto.txt', 'r')
 msg = arquivo.read()
 
