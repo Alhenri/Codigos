@@ -1,7 +1,7 @@
 import socket
 
 
-my_ip = '10.0.0.103'
+my_ip = '10.0.0.102'
 port = 4444
 server = socket.socket()
 server.bind((my_ip, port))

