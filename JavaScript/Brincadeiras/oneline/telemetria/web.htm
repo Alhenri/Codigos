@@ -57,11 +57,32 @@
                     let resp = JSON.parse(this.responseText);
                     const reserv = document.querySelector("p#reserv");
                     const tanque = document.querySelector("p#tanque");
-
-                    reserv.innerText = `Status do reservatório: ${resp.reserv}` ;
-                    tanque.innerText = `Status do tanque: ${resp.tanque}`;
+                    console.log(resp);
+                    let ReservStatus = "Aguardando sinal...";
+                    let TanqueStatus = "Aguardando sinal...";
+                    
+                    if (resp.reservA==1&&resp.reservB==1) {
+                        ReservStatus = "Cheio!";
+                    }
+                    if (resp.reservA==0&&resp.reservB==1){
+                        ReservStatus = "Baixo!";
+                    }
+                    if(resp.reservA==0&&resp.reservB==0){
+                        ReservStatus = "Vazio!";
+                    }
+                    if(resp.tanqueA==1&&resp.tanqueB==1){
+                        TanqueStatus = "Cheio!";
+                    }
+                    if(resp.tanqueA==0&&resp.tanqueB==1){
+                        TanqueStatus = "Baixo!";
+                    }
+                    if(resp.tanqueA==0&&resp.tanqueB==0){
+                        TanqueStatus = "Vazio";
+                    }
+                    reserv.innerText = `Status do reservatório: ${ReservStatus}` ;
+                    tanque.innerText = `Status do tanque: ${TanqueStatus}`;
                 }
-
+            
             };
 
             request.open("GET", "dados", true);
